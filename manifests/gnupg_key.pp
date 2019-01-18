@@ -8,7 +8,7 @@ class rvm::gnupg_key(
     ensure     => present,
     key_id     => $key_id,
     user       => 'root',
-    key_server => $key_server,
+    key_source => $key_server,
     key_type   => public,
   }
 

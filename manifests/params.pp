@@ -12,11 +12,11 @@ class rvm::params($manage_group = true) {
 
   $proxy_url = undef
   $no_proxy = undef
-  $key_server = 'hkp://keys.gnupg.net'
+  $key_server = 'https://rvm.io/pkuczynski.asc'
 
   # install the gpg key if gpg is installed or being installed in this puppet run
-  if defined(Class['::gnupg']) or $facts['gnupg_installed'] {
-    $gnupg_key_id = 'D39DC0E3'
+  if defined(Class['::gnupg']) or $::gnupg_installed {
+    $gnupg_key_id = '7D2BAF1C'
   } else {
     $gnupg_key_id = false
   }
